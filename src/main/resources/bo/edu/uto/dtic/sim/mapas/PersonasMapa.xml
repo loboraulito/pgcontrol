@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="bo.edu.uto.dtic.sim.mapas.PersonasMapa">
+	<select id="buscarPersonas" parameterType="string" resultType="Personas">
+		select p.*
+		from public.personas p
+		where
+			p.dip ilike #{buscar}
+			or p.nombre ilike #{buscar}
+		limit 6
+	</select>
+
+</mapper>

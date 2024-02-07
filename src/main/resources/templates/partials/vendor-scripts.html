@@ -1,0 +1,75 @@
+<html>
+<body>
+	<div th:fragment="scripts" th:remove="tag">
+		<!-- JAVASCRIPT -->
+		<script th:src="@{/assets/libs/bootstrap/js/bootstrap.bundle.min.js}"></script>
+		<script th:src="@{/assets/js/jquery-3.7.1.min.js}"></script>
+		<script th:src="@{/assets/libs/simplebar/simplebar.min.js}"></script>
+		<script th:src="@{/assets/libs/node-waves/waves.min.js}"></script>
+		<script th:src="@{/assets/libs/feather-icons/feather.min.js}"></script>
+		<script th:src="@{/assets/js/pages/plugins/lord-icon-2.1.0.js}"></script>
+		<script th:src="@{/assets/js/plugins.js}"></script>
+		<script type='text/javascript'>
+			$('#menu_aplicacion').html(sessionStorage.getItem('sim_menu'));
+		</script>
+		<script type='text/javascript'>
+			function cambiarRol(id_rol){
+				$.ajax({
+					type: "POST",
+					data: {'id_rol': id_rol},
+					url: '/enlaces/renderMenu',
+					success: function (response) {
+						$('#menu_aplicacion').html(response);
+						sessionStorage.setItem('sim_rol_activo',id_rol);
+						localStorage.setItem('sim_rol_activo',id_rol);
+						sessionStorage.setItem('sim_menu', response);
+						if (localStorage.getItem("sim_ruta_guardada") !== null)
+							window.location.href = localStorage.getItem("sim_ruta_guardada");
+					},
+					error: function (response) {
+						console.log('error');
+						console.log(response);
+					}
+				});
+			}
+
+			function recordarSitio(){
+				ruta = $(location).attr('pathname').replace($("base").attr("href"),"");
+				console.log("ruta: "+ruta);
+				localStorage.setItem("sim_ruta_guardada", ruta);
+			}
+
+			function cargarParametrosIniciales(){
+				console.log('Cargando Parametros Iniciales');
+				let estilo;
+				if (localStorage.getItem("sim_data-layout-mode")!==null)
+					estilo = localStorage.getItem("sim_data-layout-mode");
+				else
+					estilo = "light";
+				sessionStorage.setItem("data-layout-mode", estilo);
+				$("html").attr("data-layout-mode", estilo);
+				console.log('Cargando Parametros Iniciales 1');
+				if(localStorage.getItem('sim_rol_activo') !== null){
+					id_rol = localStorage.getItem('sim_rol_activo')
+					$.ajax({
+						type: "POST",
+						data: {'id_rol': id_rol},
+						url: '/principal/verificarRol',
+						success: function (response) {
+							console.log('Cargando Parametros Iniciales 2');
+							console.log(response);
+							sessionStorage.setItem('sim_primera_entrada',false);
+							if(response.rolActivo){
+								cambiarRol(localStorage.getItem('sim_rol_activo'));
+							}
+						},
+						error: function (response) {
+							console.log(response);
+						}
+					});
+				}
+			}
+		</script>
+	</div>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="bo.edu.uto.dtic.sim.mapas.RolMapa">
+	<select id="getRoles" resultType="Rol" parameterType="Rol" >
+		select distinct (r.*)
+			from public."_usr_roles" ur
+				join public."_roles" r on (ur.id_rol = r.id_rol)
+			where ur.id_usuario = #{ id_usuario }
+				and r.id_sistema = #{ id_sistema }
+				and ur.fec_expiracion &gt;= current_date
+				and ur."id_estado"
+				and r."id_estado"
+		;
+	</select>
+</mapper>

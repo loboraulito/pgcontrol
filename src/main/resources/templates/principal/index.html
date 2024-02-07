@@ -1,0 +1,36 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout}">
+
+<th:block layout:fragment="pagetitle">
+	<!--page title-->
+	<div th:replace="partials/title-meta :: title-meta('Principal')"></div>
+</th:block>
+
+<head>
+	<!-- jsvectormap css -->
+	<link href="/assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<div layout:fragment="content">
+		 <!-- start page title -->
+		<div th:replace="partials/page-title :: page-title('Principal','Sistema')"></div>
+		 <!-- end page title -->
+	</div>
+
+	<th:block layout:fragment="pagejs">
+
+		<!-- apexcharts -->
+		<script src="/assets/libs/apexcharts/apexcharts.min.js"></script>
+
+		<!-- Vector map-->
+		<script src="/assets/libs/jsvectormap/js/jsvectormap.min.js"></script>
+		<script src="/assets/libs/jsvectormap/maps/world-merc.js"></script>
+
+		<!-- Dashboard init -->
+	<script src="/assets/js/pages/dashboard-analytics.init.js"></script>
+	</th:block>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="bo.edu.uto.dtic.sim.mapas.QRMapa">
+	<select id="listarSolicitudes" resultType="CwSolicitudCobroQR" parameterType="CwSolicitudCobroQR">
+		select s.*, p.nombre, p.dip
+			from matricula.cw_solicitud_cobro_qr s
+			join public.personas p on (s.id_persona = p.id_persona)
+		<where>
+			<if test="nombre != null">
+				 and tipocobro = #{ tipocobro }
+			</if>
+			<if test="tipocobro != null">
+				 and tipocobro = #{ tipocobro }
+			</if>
+			<if test="fecha_generacion != null">
+				 and fecha_generacion = #{ fecha_generacion }
+			</if>
+			<if test="fecha_pago != null">
+				 and fecha_pago = #{ fecha_pago }
+			</if>
+			<if test="amount != null">
+				 and amount = #{ amount }
+			</if>
+			<if test="success != null">
+				 and success = #{ success }
+			</if>
+			<if test="estado != null">
+				 and estado = #{ estado }
+			</if>
+			<if test="id_estado != null">
+				 and id_estado = #{ id_estado }
+			</if>
+			<if test="tipocobro != null">
+				 and tipocobro = #{ tipocobro }
+			</if>
+		</where>
+		limit 500
+		;
+	</select>
+</mapper>

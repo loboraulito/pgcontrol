@@ -1,0 +1,13 @@
+<html xmlns:th="http://thymeleaf.org">
+<div th:fragment="menuFragment" th:remove="tag">
+    <li class="nav-item" th:each="enlace : ${menu}">
+        <a class="nav-link menu-link" th:href="${(enlace.enlaces == null or enlace.enlaces.isEmpty())?enlace.ruta:('#m'+enlace.id_enlace)}" th:attr="data-bs-toggle=${(enlace.enlaces != null and !enlace.enlaces.isEmpty())}?'collapse', role=${(enlace.enlaces != null and !enlace.enlaces.isEmpty())}?'button', aria-expanded=${(enlace.enlaces != null and !enlace.enlaces.isEmpty())}?'false', aria-controls=${(enlace.enlaces != null and !enlace.enlaces.isEmpty())}?('m'+${enlace.id_enlace})">
+            <i class='bx bx-chevron-right fs-22' th:if="${(enlace.enlaces != null and !enlace.enlaces.isEmpty())}"></i>
+            <span data-key="t-dashboards" th:text="${enlace.enlace}"></span>
+        </a>
+        <div class="collapse menu-dropdown" th:id="|m${enlace.id_enlace}" th:if="${(enlace.enlaces != null and !enlace.enlaces.isEmpty())}">
+            <ul class="nav nav-sm flex-column" th:with="menu = ${enlace.enlaces}" th:include="enlaces/menu.html :: menuFragment"></ul>
+        </div>
+    </li>
+</div>
+</html>

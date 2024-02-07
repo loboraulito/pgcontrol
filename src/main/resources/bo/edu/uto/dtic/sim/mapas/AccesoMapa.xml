@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="bo.edu.uto.dtic.sim.mapas.AccesoMapa">
+	<select id="getUsuario" resultType="UsuarioAcceso">
+		select
+			u.*, p.nombre as nombre_completo
+		from
+			public."_usuarios" u
+			left join public.personas p on (u.id_persona = p.id_persona)
+		where u.id_estado
+			and u.apodo = #{ apodo }
+		;
+	</select>
+</mapper>
