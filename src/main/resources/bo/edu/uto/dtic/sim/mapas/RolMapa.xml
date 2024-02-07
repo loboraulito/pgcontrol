@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="bo.edu.uto.dtic.sim.mapas.RolMapa">
+<mapper namespace="bo.edu.uto.dtic.pgcontrol.mapas.RolMapa">
 	<select id="getRoles" resultType="Rol" parameterType="Rol" >
 		select distinct (r.*)
 			from public."_usr_roles" ur

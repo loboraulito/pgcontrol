@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="bo.edu.uto.dtic.sim.mapas.EnlaceMapper">
+<mapper namespace="bo.edu.uto.dtic.pgcontrol.mapas.EnlaceMapper">
 	<resultMap id="enlaceResultMap" type="Enlace">
 		<id column="id_enlace" property="id_enlace"/>
 		<result column="id_enlace_padre" property="id_enlace_padre"/>

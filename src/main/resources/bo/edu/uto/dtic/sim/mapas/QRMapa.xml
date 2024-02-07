@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="bo.edu.uto.dtic.sim.mapas.QRMapa">
+<mapper namespace="bo.edu.uto.dtic.pgcontrol.mapas.QRMapa">
 	<select id="listarSolicitudes" resultType="CwSolicitudCobroQR" parameterType="CwSolicitudCobroQR">
 		select s.*, p.nombre, p.dip
 			from matricula.cw_solicitud_cobro_qr s

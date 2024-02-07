@@ -9,11 +9,11 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>bo.edu.uto.dtic</groupId>
-	<artifactId>sim</artifactId>
+	<artifactId>pgcontrol</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<!-- <packaging>war</packaging> -->
-	<name>SIM</name>
-	<description>Sistema de información de Matriculación</description>
+	<name>PGcontrol</name>
+	<description>Sistema de información de Postgrado</description>
 	<properties>
 		<java.version>17</java.version>
 		<spring-cloud.version>2023.0.0-RC1</spring-cloud.version>
@@ -95,7 +95,7 @@
 	</dependencyManagement>
 
 	<build>
-		<finalName>sim</finalName>
+		<finalName>pgcontrol</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
