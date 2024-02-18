@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="bo.edu.uto.dtic.pgcontrol.mapas.CategoriaMapa">
+	<select id="getAll" resultType="Categoria" >
+		 select * from postgrado.categoria
+	</select>
+	<select id="getById" resultType="Categoria">
+		select *
+			from postgrado.categoria
+			where categoria.id_categoria = #{id_categoria}
+	</select>
+
+	<select id="getCategoriaDetalle" resultType="Categoria">
+		select u.*, p.nombre, f.abrev, u2.unidad
+			from dea.usuario u
+				left join public.personas p on (u.id_persona = p.id_persona)
+				left join dea.comision c on (u.id_comision = c.id_comision)
+				left join public.unidades u2 on (u2.id_unidad = c.id_unidad)
+				left join public.facultades f on (f.id_facultad = c.id_facultad)
+		order by u.id_estado desc, u.id_persona, u.id_comision
+		;
+	</select>
+
+	<insert id="insertarUsuario" parameterType="Categoria">
+		INSERT INTO _Categoria(
+			id_persona, id_estado, apodo, clave, recordatorio)
+		VALUES (#{id_persona},true,#{apodo},md5(#{clave}),#{recordatorio});
+	</insert>
+<!--	<update id="setEditarUsuario" parameterType="Categoria">
+		UPDATE _Categoria SET usuario=#{usuario}
+		WHERE id_usuario=#{id_usuario};
+	</update>-->
+	<delete id="borrarUsuario" parameterType="Categoria">
+		UPDATE _Categoria SET id_estado=false
+			WHERE id_usuario=#{id_usuario};
+	</delete>
+</mapper>
