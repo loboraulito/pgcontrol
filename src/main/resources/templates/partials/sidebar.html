@@ -37,7 +37,28 @@
 					</div>
 					<ul class="navbar-nav" id="navbar-nav">
 						<li class="menu-title"><span data-key="t-menu">Menu</span></li>
-						<div id="menu_aplicacion"></div>
+						<div id="menu_aplicacion">
+
+						</div>
+						<li class="nav-item">
+							<a class="nav-link menu-link collapsed" href="#sidebarMultilevel" data-bs-toggle="collapse"
+								role="button" aria-expanded="false" aria-controls="sidebarMultilevel">
+								<i class="las la-folder-plus"></i> <span data-key="t-multi-level">Programas</span>
+							</a>
+							<div class="menu-dropdown collapse" id="sidebarMultilevel" style="">
+								<ul class="nav nav-sm flex-column">
+									<li class="nav-item">
+										<a th:href="@{/programas/index}" class="nav-link" data-key="t-level-1.1">Lista de Programas</a>
+									</li>
+									<li class="nav-item">
+										<a th:href="@{/programas/nuevo}" class="nav-link" data-key="t-level-1.1">Nuevo Programa</a>
+									</li>
+									<li class="nav-item">
+										<a th:href="@{/programas/editar}" class="nav-link" data-key="t-level-1.1">Editar Programa</a>
+									</li>
+								</ul>
+							</div>
+						</li>
 					</ul>
 				</div>
 				<!-- Sidebar -->
