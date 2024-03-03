@@ -45,7 +45,7 @@
 								role="button" aria-expanded="true" aria-controls="sidebarMultilevel">
 								<i class="las la-folder-plus"></i> <span data-key="t-multi-level">Programas</span>
 							</a>
-							<div class="menu-dropdown collapse show" id="sidebarMultilevel" style="">
+							<div class="menu-dropdown collapse show" id="sidebarMultilevel">
 								<ul class="nav nav-sm flex-column">
 									<li class="nav-item">
 										<a th:href="@{/programas/index}" class="nav-link active" data-key="t-level-1.1">Lista de Programas</a>
@@ -61,6 +61,9 @@
 									</li>
 									<li class="nav-item">
 										<a th:href="@{/programas/estudiante_nuevo}" class="nav-link" data-key="t-level-1.1">Nuevo Estudiante</a>
+									</li>
+									<li class="nav-item">
+										<a th:href="@{/estudiante/ficha_inscripcion}" class="nav-link" data-key="t-level-1.1">Ficha de Inscripción Estudiante</a>
 									</li>
 								</ul>
 							</div>
