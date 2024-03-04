@@ -1,0 +1,302 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout}">
+
+<th:block layout:fragment="pagetitle">
+	<!--page title-->
+	<div th:replace="partials/title-meta :: title-meta('Cobros realizados por Programa')"></div>
+</th:block>
+
+<head>
+
+	<!-- jsvectormap css -->
+	<link href="/assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
+	<!-- gridjs css -->
+	<link rel="stylesheet" href="/assets/libs/gridjs/theme/mermaid.min.css">
+
+</head>
+
+<body>
+	<div layout:fragment="content">
+		<!-- start page title -->
+		<div th:replace="partials/page-title :: page-title('Cobros realizados','Programas')"></div>
+		<!-- end page title -->
+		<div class="row">
+			<div class="col-xxl-12 col-lg-12">
+				<div class="card card-height-100">
+					<div class="card-header align-items-center d-flex">
+						<h4 class="card-title mb-0 flex-grow-1">Aportes de Forma General</h4>
+						<div class="flex-shrink-0">
+
+						</div>
+					</div><!-- end card header -->
+
+					<div class="card-body">
+						<div id="prjects-status"
+							data-colors='["--vz-success", "--vz-primary", "--vz-warning", "--vz-danger"]'
+							class="apex-charts" dir="ltr"></div>
+						<div class="mt-3">
+							<div class="d-flex justify-content-center align-items-center mb-4">
+								<h2 class="me-3 ff-secondary mb-0">**2 585 852,00** Bs.</h2>
+								<div>
+									<p class="text-muted mb-0">Total Cobrado</p>
+									<p class="text-success fw-medium mb-0">
+										<span class="badge badge-soft-success p-1 rounded-circle"><i
+												class="ri-arrow-right-up-line"></i></span> 250 Programas Registrados
+									</p>
+								</div>
+							</div>
+
+							<div class="d-flex justify-content-between border-bottom border-bottom-dashed py-2">
+								<p class="fw-medium mb-0"><i
+										class="ri-checkbox-blank-circle-fill text-success align-middle me-2"></i>
+									Total Aporte Postgrado<span class="text-muted"> </span>
+									<span class="text-success"> **1 810 096,40** Bs.-</span></p>
+							</div><!-- end -->
+							<div class="d-flex justify-content-between border-bottom border-bottom-dashed py-2">
+								<p class="fw-medium mb-0"><i
+										class="ri-checkbox-blank-circle-fill text-primary align-middle me-2"></i> Aporte UTO <span class="text-muted pe-5"></span>
+										<span class="text-success fw-medium fs-12"> **775 755,60** Bs.-</span></p>
+							</div><!-- end -->
+							<div class="d-flex justify-content-between border-bottom border-bottom-dashed py-2">
+								<p class="fw-medium mb-0"><i
+										class="ri-checkbox-blank-circle-fill text-warning align-middle me-2"></i> Otros Aportes<span class="text-muted pe-5"></span>
+										<span class="text-success fw-medium fs-12">**120 251,00** Bs.-</span></p>
+								<div>
+
+								</div>
+							</div><!-- end -->
+							<div class="d-flex justify-content-between py-2">
+								<p class="fw-medium mb-0"><i
+										class="ri-checkbox-blank-circle-fill text-danger align-middle me-2"></i>
+									Ordentes de Pago Pendientes<span class="text-muted pe-5"></span>
+									<span class="text-success fw-medium fs-12">**452 452,00** Bs.-</span></p>
+								<div>
+
+								</div>
+							</div><!-- end -->
+						</div>
+					</div><!-- end cardbody -->
+				</div><!-- end card -->
+			</div><!-- end col -->
+			<div class="col-xl-6">
+				<h4 class="card-title mb-0 flex-grow-1">Aportes por Programa Activo</h4>
+				<div class="d-flex flex-column h-100">
+					<div class="row">
+						<div class="col-xl-6 col-md-6">
+							<div class="card card-animate overflow-hidden">
+								<div class="position-absolute start-0" style="z-index: 0;">
+									<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120"
+										width="200" height="120">
+										<style>
+											.s0 {
+												opacity: .05;
+												fill: var(--vz-success)
+											}
+										</style>
+										<path id="Shape 8" class="s0"
+											d="m189.5-25.8c0 0 20.1 46.2-26.7 71.4 0 0-60 15.4-62.3 65.3-2.2 49.8-50.6 59.3-57.8 61.5-7.2 2.3-60.8 0-60.8 0l-11.9-199.4z" />
+									</svg>
+								</div>
+								<div class="card-body" style="z-index:1 ;">
+									<div class="d-flex align-items-center">
+										<div class="flex-grow-1 overflow-hidden">
+											<p class="text-uppercase fw-medium text-muted text-truncate mb-3"> Programa Diplomado en Gestion Ambiental 6ta version</p>
+											<h4 class="fs-22 fw-semibold ff-secondary mb-0"><span class="counter-value"
+													data-target="36894">0</span></h4>
+										</div>
+										<div class="flex-shrink-0">
+											<div id="total_jobs" data-colors='["--vz-success"]' class="apex-charts"
+												dir="ltr"></div>
+										</div>
+									</div>
+								</div><!-- end card body -->
+							</div><!-- end card -->
+						</div>
+						<!--end col-->
+						<div class="col-xl-6 col-md-6">
+							<!-- card -->
+							<div class="card card-animate overflow-hidden">
+								<div class="position-absolute start-0" style="z-index: 0;">
+									<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120"
+										width="200" height="120">
+										<style>
+											.s0 {
+												opacity: .05;
+												fill: var(--vz-success)
+											}
+										</style>
+										<path id="Shape 8" class="s0"
+											d="m189.5-25.8c0 0 20.1 46.2-26.7 71.4 0 0-60 15.4-62.3 65.3-2.2 49.8-50.6 59.3-57.8 61.5-7.2 2.3-60.8 0-60.8 0l-11.9-199.4z" />
+									</svg>
+								</div>
+								<div class="card-body" style="z-index:1 ;">
+									<div class="d-flex align-items-center">
+										<div class="flex-grow-1 overflow-hidden">
+											<p class="text-uppercase fw-medium text-muted text-truncate mb-3"> Programa Diplomado en Educacion Superior 17ma version</p>
+											<h4 class="fs-22 fw-semibold ff-secondary mb-0"><span class="counter-value"
+													data-target="28410">0</span></h4>
+										</div>
+										<div class="flex-shrink-0">
+											<div id="apply_jobs" data-colors='["--vz-success"]' class="apex-charts"
+												dir="ltr"></div>
+										</div>
+									</div>
+								</div><!-- end card body -->
+							</div><!-- end card -->
+						</div><!-- end col -->
+						<div class="col-xl-6 col-md-6">
+							<!-- card -->
+							<div class="card card-animate overflow-hidden">
+								<div class="position-absolute start-0" style="z-index: 0;">
+									<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120"
+										width="200" height="120">
+										<style>
+											.s0 {
+												opacity: .05;
+												fill: var(--vz-success)
+											}
+										</style>
+										<path id="Shape 8" class="s0"
+											d="m189.5-25.8c0 0 20.1 46.2-26.7 71.4 0 0-60 15.4-62.3 65.3-2.2 49.8-50.6 59.3-57.8 61.5-7.2 2.3-60.8 0-60.8 0l-11.9-199.4z" />
+									</svg>
+								</div>
+								<div class="card-body" style="z-index:1 ;">
+									<div class="d-flex align-items-center">
+										<div class="flex-grow-1 overflow-hidden">
+											<p class="text-uppercase fw-medium text-muted text-truncate mb-3">Programa Diplomado en Gestion Ambiental 7ma version</p>
+											<h4 class="fs-22 fw-semibold ff-secondary mb-0"><span class="counter-value"
+													data-target="4305">0</span></h4>
+										</div>
+										<div class="flex-shrink-0">
+											<div id="new_jobs_chart" data-colors='["--vz-success"]' class="apex-charts"
+												dir="ltr"></div>
+										</div>
+									</div>
+								</div><!-- end card body -->
+							</div><!-- end card -->
+						</div><!-- end col -->
+						<div class="col-xl-6 col-md-6">
+							<!-- card -->
+							<div class="card card-animate overflow-hidden">
+								<div class="position-absolute start-0" style="z-index: 0;">
+									<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120"
+										width="200" height="120">
+										<style>
+											.s0 {
+												opacity: .05;
+												fill: var(--vz-success)
+											}
+										</style>
+										<path id="Shape 8" class="s0"
+											d="m189.5-25.8c0 0 20.1 46.2-26.7 71.4 0 0-60 15.4-62.3 65.3-2.2 49.8-50.6 59.3-57.8 61.5-7.2 2.3-60.8 0-60.8 0l-11.9-199.4z" />
+									</svg>
+								</div>
+								<div class="card-body" style="z-index:1 ;">
+									<div class="d-flex align-items-center">
+										<div class="flex-grow-1 overflow-hidden">
+											<p class="text-uppercase fw-medium text-muted text-truncate mb-3">Programa 1</p>
+											<h4 class="fs-22 fw-semibold ff-secondary mb-0"><span class="counter-value"
+													data-target="5021">0</span></h4>
+										</div>
+										<div class="flex-shrink-0">
+											<div id="interview_chart" data-colors='["--vz-danger"]' class="apex-charts"
+												dir="ltr"></div>
+										</div>
+									</div>
+								</div><!-- end card body -->
+							</div><!-- end card -->
+						</div><!-- end col -->
+						<div class="col-xl-6 col-md-6">
+							<div class="card card-animate overflow-hidden">
+								<div class="position-absolute start-0" style="z-index: 0;">
+									<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120"
+										width="200" height="120">
+										<style>
+											.s0 {
+												opacity: .05;
+												fill: var(--vz-success)
+											}
+										</style>
+										<path id="Shape 8" class="s0"
+											d="m189.5-25.8c0 0 20.1 46.2-26.7 71.4 0 0-60 15.4-62.3 65.3-2.2 49.8-50.6 59.3-57.8 61.5-7.2 2.3-60.8 0-60.8 0l-11.9-199.4z" />
+									</svg>
+								</div>
+								<div class="card-body" style="z-index:1 ;">
+									<div class="d-flex align-items-center">
+										<div class="flex-grow-1 overflow-hidden">
+											<p class="text-uppercase fw-medium text-muted text-truncate mb-3"> Programa 2</p>
+											<h4 class="fs-22 fw-semibold ff-secondary mb-0"><span class="counter-value"
+													data-target="3948">0</span></h4>
+										</div>
+										<div class="flex-shrink-0">
+											<div id="hired_chart" data-colors='["--vz-success"]' class="apex-charts"
+												dir="ltr"></div>
+										</div>
+									</div>
+								</div><!-- end card body -->
+							</div><!-- end card -->
+						</div>
+						<!--end col-->
+						<div class="col-xl-6 col-md-6">
+							<!-- card -->
+							<div class="card card-animate overflow-hidden">
+								<div class="position-absolute start-0" style="z-index: 0;">
+									<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120"
+										width="200" height="120">
+										<style>
+											.s0 {
+												opacity: .05;
+												fill: var(--vz-success)
+											}
+										</style>
+										<path id="Shape 8" class="s0"
+											d="m189.5-25.8c0 0 20.1 46.2-26.7 71.4 0 0-60 15.4-62.3 65.3-2.2 49.8-50.6 59.3-57.8 61.5-7.2 2.3-60.8 0-60.8 0l-11.9-199.4z" />
+									</svg>
+								</div>
+								<div class="card-body" style="z-index:1 ;">
+									<div class="d-flex align-items-center">
+										<div class="flex-grow-1 overflow-hidden">
+											<p class="text-uppercase fw-medium text-muted text-truncate mb-3">Programa 3
+											</p>
+											<h4 class="fs-22 fw-semibold ff-secondary mb-0"><span class="counter-value"
+													data-target="1340">0</span></h4>
+										</div>
+										<div class="flex-shrink-0">
+											<div id="rejected_chart" data-colors='["--vz-danger"]' class="apex-charts"
+												dir="ltr"></div>
+										</div>
+									</div>
+								</div><!-- end card body -->
+							</div><!-- end card -->
+						</div><!-- end col -->
+					</div>
+					<!--end row-->
+				</div>
+			</div>
+			<!--end col-->
+		</div>
+		<!--end row-->
+	</div>
+
+	<th:block layout:fragment="pagejs">
+
+		<!-- apexcharts -->
+		<script src="/assets/libs/apexcharts/apexcharts.min.js"></script>
+		<!--Swiper slider js-->
+		<script src="/assets/libs/swiper/swiper-bundle.min.js"></script>
+
+		<!-- Vector map-->
+		<script src="/assets/libs/jsvectormap/js/jsvectormap.min.js"></script>
+		<script src="/assets/libs/jsvectormap/maps/world-merc.js"></script>
+
+		<!-- gridjs js -->
+		<script src="/assets/libs/gridjs/gridjs.umd.js"></script>
+
+		<!-- Dashboard init -->
+		<script src="/assets/js/pages/dashboard-projects.init.js"></script>
+		<script src="/assets/js/pages/dashboard-job.init.js"></script>
+	</th:block>
+</body>
+
+</html>

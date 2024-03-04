@@ -37,4 +37,11 @@ public class OrdenesPagoController {
 		Integer id_usuario = (Integer) hs.getAttribute("__id_usuario");
 		return new ModelAndView("ordenes/listaPendientes", modelo);
 	}
+	@RequestMapping("/reporte")
+	@ResponseBody
+	public ModelAndView reporte(String term, HttpServletRequest hsr, HttpSession hs) {
+		HashMap modelo = new HashMap();
+		Integer id_usuario = (Integer) hs.getAttribute("__id_usuario");
+		return new ModelAndView("ordenes/reporte", modelo);
+	}
 }
