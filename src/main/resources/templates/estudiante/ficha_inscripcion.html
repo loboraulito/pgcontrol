@@ -4,7 +4,7 @@
 
 <th:block layout:fragment="pagetitle">
 	<!--page title-->
-	<div th:replace="partials/title-meta :: title-meta('Crear Programa')"></div>
+	<div th:replace="partials/title-meta :: title-meta('Formulario de Inscripción')"></div>
 </th:block>
 
 <head>
@@ -14,68 +14,118 @@
 
 <body>
 	<div layout:fragment="content">
-		<div th:replace="partials/page-title :: page-title('Crear Programa','Programas')"></div>
+		<div th:replace="partials/page-title :: page-title('Ficha Inscripción','Estudiante')"></div>
 
 		<div class="row">
-			<div class="col-lg-8">
+			<div class="col-lg-12">
 				<div class="card">
 					<div class="card-body">
 						<div class="mb-3">
-							<label class="form-label" for="project-title-input">Título del Programa</label>
+							<strong>Nota Importante: recuerde que si ya fomo parte de algún programa de postgrado de la Universidad
+								o formo parte de la UTO en pregrado, debe usar el mismo número de CI (Número de carnet o número de
+								documento de identificación personal), para evitar duplicar sus registros.
+							</strong>
+						</div>
+						<div class="mb-3">
+							<label class="form-label" for="project-title-input">CI.:</label>
 							<input type="text" class="form-control" id="project-title-input"
-								placeholder="Ingrese título del Programa">
+								placeholder="Carnet de Identidad">
+						</div>
+						<div class="mb-3">
+							<label class="form-label" for="project-title-input">Nombre</label>
+							<input type="text" class="form-control" id="project-title-input"
+								placeholder="Raúl Antonio">
+						</div>
+						<div class="mb-3">
+							<label class="form-label" for="project-title-input">Apellido Paterno</label>
+							<input type="text" class="form-control" id="project-title-input"
+								placeholder="Velásquez">
+						</div>
+						<div class="mb-3">
+							<label class="form-label" for="project-title-input">Apellido Paterno</label>
+							<input type="text" class="form-control" id="project-title-input"
+								placeholder="Muriel">
+						</div>
+						<div class="mb-3">
+							<label class="form-label mb-0">Fecha de Nacimiento</label>
+							<input type="text" class="form-control" data-provider="flatpickr"
+								data-date-format="Y-m-d">
 						</div>
 
 						<div class="mb-3">
-							<label class="form-label" for="project-thumbnail-img">Thumbnail Image</label>
-							<input class="form-control" id="project-thumbnail-img" type="file"
-								accept="image/png, image/gif, image/jpeg">
+							<label class="form-label mb-0">Lugar de Nacimiento o Nacionalidad</label>
+							<input type="text" class="form-control" data-provider="flatpickr"
+								data-date-format="Y-m-d">
 						</div>
-
 						<div class="mb-3">
-							<label class="form-label">Descripción del Programa</label>
-							<div id="ckeditor-classic">
-								<p>Esta es una descripción de ejemplo del programa</p>
-								<ul>
-									<li>Contenido 1</li>
-									<li>Contenido 2</li>
-									<li>Contenido 3</li>
-									<li>Contenido 4</li>
-								</ul>
+							<label class="form-label mb-0">Domicilio</label>
+							<input type="text" class="form-control" data-provider="flatpickr"
+								data-date-format="Y-m-d">
+						</div>
+						<div class="mb-3">
+							<label class="form-label mb-0">Telefono de Domicilio</label>
+							<input type="text" class="form-control" data-provider="flatpickr"
+								data-date-format="Y-m-d">
+						</div>
+						<div class="mb-3">
+							<label class="form-label mb-0">Celular</label>
+							<input type="text" class="form-control" data-provider="flatpickr"
+								data-date-format="Y-m-d">
+						</div>
+						<div class="mb-3">
+							<label class="form-label mb-0">Email</label>
+							<input type="text" class="form-control" data-provider="flatpickr"
+								data-date-format="Y-m-d">
+						</div>
+						<div class="mb-3">
+							<label class="form-label mb-0">Profesión</label>
+							<input type="text" class="form-control" data-provider="flatpickr"
+								data-date-format="Y-m-d">
+						</div>
+						<div class="mb-3">
+							<label class="form-label mb-0">Universidad de Egreso</label>
+							<input type="text" class="form-control" data-provider="flatpickr"
+								data-date-format="Y-m-d">
+						</div>
+						<div class="mb-3">
+							<label class="form-label mb-0">Trabajo Actual</label>
+							<input type="text" class="form-control" data-provider="flatpickr"
+								data-date-format="Y-m-d">
+						</div>
+						<div class="mb-3">
+							<label class="form-label mb-0">Teléfono de Trabajo</label>
+							<input type="text" class="form-control" data-provider="flatpickr"
+								data-date-format="Y-m-d">
+						</div>
+						<div class="mb-3">
+							<label for="choices-status-input" class="form-label">Postgrado en el que se inscribe</label>
+							<select class="form-select" data-choices data-choices-search-false
+								id="choices-status-input">
+								<option value="Inprogress" selected>Programa Diplomado en Gestion Ambiental 6ta version</option>
+								<option value="Completed">Programa Diplomado en Educacion Superior 17ma version</option>
+								<option value="Inprogress">Programa Diplomado en Gestion Ambiental 7ma version</option>
+							</select>
+						</div>
+						<div class="col-lg-4 col-md-6">
+							<div>
+								<p class="fw-medium">Es Docente de la UTO</p>
+								<div class="form-check mb-2">
+									<input class="form-check-input" type="checkbox" id="formCheck1">
+									<label class="form-check-label" for="formCheck1">
+										Si
+									</label>
+								</div>
 							</div>
 						</div>
-
-						<div class="row">
-							<div class="col-lg-4">
-								<div class="mb-3 mb-lg-0 hide">
-									<label for="choices-priority-input" class="form-label">Pr</label>
-									<select class="form-select" data-choices data-choices-search-false
-										id="choices-priority-input">
-										<option value="High" selected>Nuevo</option>
-										<option value="Medium">En curso</option>
-										<option value="Low">Terminado</option>
-									</select>
-								</div>
-							</div>
-							<div class="col-lg-4">
-								<div class="mb-3 mb-lg-0">
-									<label for="choices-status-input" class="form-label">Estado</label>
-									<select class="form-select" data-choices data-choices-search-false
-										id="choices-status-input">
-										<option value="Inprogress" selected>En Inscripción</option>
-										<option value="Completed">En curso</option>
-										<option value="Inprogress">Terminado</option>
-										<option value="Completed">En pausa</option>
-									</select>
-								</div>
-							</div>
-							<div class="col-lg-4">
-								<div>
-									<label for="datepicker-deadline-input" class="form-label">Fecha Final</label>
-									<input type="text" class="form-control" id="datepicker-deadline-input"
-										placeholder="Ingrese fecha final" data-provider="flatpickr">
-								</div>
-							</div>
+						<div class="mb-3">
+							<label class="form-label mb-0">Cargo</label>
+							<input type="text" class="form-control" data-provider="flatpickr"
+								data-date-format="Y-m-d">
+						</div>
+						<div class="mb-3">
+							<label class="form-label mb-0">Observaciones</label>
+							<input type="text" class="form-control" data-provider="flatpickr"
+								data-date-format="Y-m-d">
 						</div>
 					</div>
 					<!-- end card body -->
@@ -138,110 +188,6 @@
 					<button type="submit" class="btn btn-secondary w-sm">Duplicar</button>
 					<button type="submit" class="btn btn-success w-sm">Crear</button>
 				</div>
-			</div>
-			<!-- end col -->
-			<div class="col-lg-4">
-				<div class="card">
-					<div class="card-header">
-						<h5 class="card-title mb-0">Vista</h5>
-					</div>
-					<div class="card-body">
-						<div>
-							<label for="choices-privacy-status-input" class="form-label">Estado</label>
-							<select class="form-select" data-choices data-choices-search-false
-								id="choices-privacy-status-input">
-								<option value="Private" selected>Solo Director</option>
-								<option value="Team">Solo Coordinadores</option>
-								<option value="Public">Publico</option>
-							</select>
-						</div>
-					</div>
-					<!-- end card body -->
-				</div>
-				<!-- end card -->
-
-				<div class="card">
-					<div class="card-header">
-						<h5 class="card-title mb-0">Categoría</h5>
-					</div>
-					<div class="card-body">
-						<div class="mb-3">
-							<label for="choices-categories-input" class="form-label">Categorias</label>
-							<select class="form-select" data-choices data-choices-search-false
-								id="choices-categories-input">
-								<option value="Designing" selected>Postgrado Central</option>
-								<option value="Development">Ingenierías</option>
-							</select>
-						</div>
-
-						<div>
-							<label for="choices-text-input" class="form-label">Habilidades</label>
-							<input class="form-control" id="choices-text-input" data-choices
-								data-choices-limit="Required Limit" placeholder="Enter Skills" type="text"
-								value="UI/UX, Figma, HTML, CSS, Javascript, C#, Nodejs" />
-						</div>
-					</div>
-					<!-- end card body -->
-				</div>
-				<!-- end card -->
-
-				<div class="card">
-					<div class="card-header">
-						<h5 class="card-title mb-0">Coordinadores</h5>
-					</div>
-					<div class="card-body">
-						<div class="mb-3">
-							<label for="choices-lead-input" class="form-label">Coordinador de Programa</label>
-							<select class="form-select" data-choices data-choices-search-false id="choices-lead-input">
-								<option value="Brent Gonzalez" selected>Brent Gonzalez</option>
-								<option value="Darline Williams">Darline Williams</option>
-								<option value="Sylvia Wright">Sylvia Wright</option>
-								<option value="Ellen Smith">Ellen Smith</option>
-								<option value="Jeffrey Salazar">Jeffrey Salazar</option>
-								<option value="Mark Williams">Mark Williams</option>
-							</select>
-						</div>
-
-						<div>
-							<label class="form-label">Estudiantes</label>
-							<div class="avatar-group">
-								<a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip"
-									data-bs-trigger="hover" data-bs-placement="top" title="Brent Gonzalez">
-									<div class="avatar-xs">
-										<img src="assets/images/users/avatar-3.jpg" alt=""
-											class="rounded-circle img-fluid">
-									</div>
-								</a>
-								<a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip"
-									data-bs-trigger="hover" data-bs-placement="top" title="Sylvia Wright">
-									<div class="avatar-xs">
-										<div class="avatar-title rounded-circle bg-secondary">
-											S
-										</div>
-									</div>
-								</a>
-								<a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip"
-									data-bs-trigger="hover" data-bs-placement="top" title="Ellen Smith">
-									<div class="avatar-xs">
-										<img src="assets/images/users/avatar-4.jpg" alt=""
-											class="rounded-circle img-fluid">
-									</div>
-								</a>
-								<a href="javascript: void(0);" class="avatar-group-item" data-bs-toggle="tooltip"
-									data-bs-trigger="hover" data-bs-placement="top" title="Add Members">
-									<div class="avatar-xs" data-bs-toggle="modal" data-bs-target="#inviteMembersModal">
-										<div
-											class="avatar-title fs-16 rounded-circle bg-light border-dashed border text-primary">
-											+
-										</div>
-									</div>
-								</a>
-							</div>
-						</div>
-					</div>
-					<!-- end card body -->
-				</div>
-				<!-- end card -->
 			</div>
 			<!-- end col -->
 		</div>

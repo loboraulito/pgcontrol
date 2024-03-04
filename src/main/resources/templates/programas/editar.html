@@ -86,6 +86,11 @@
 										Estudiantes
 									</a>
 								</li>
+								<li class="nav-item">
+									<a class="nav-link" data-bs-toggle="tab" href="#ordenespago" role="tab">
+										<i class="far fa-envelope"></i> Ordenes de Pago
+									</a>
+								</li>
 							</ul>
 						</div>
 						<!-- end card body -->
@@ -1755,6 +1760,115 @@
 						</div><!-- end row -->
 					</div>
 					<!-- end tab pane -->
+					<!--end tab-pane-->
+					<div class="tab-pane" id="ordenespago" role="tabpanel">
+							<div class="flex-shrink-0">
+								<div class="d-flex flex-wrap gap-2">
+									<button class="btn btn-danger add-btn" data-bs-toggle="modal"
+										data-bs-target="#showModal"><i class="ri-add-line align-bottom me-1"></i> Nueva Orden de Pago</button>
+									<button class="btn btn-soft-danger" id="remove-actions"
+										onClick="deleteMultiple()"><i class="ri-delete-bin-2-line"></i></button>
+								</div>
+							</div>
+							<!-- Striped Rows -->
+							<table class="table table-striped">
+								<thead>
+									<tr>
+										<th scope="col">Id</th>
+										<th scope="col">Descripción</th>
+										<th scope="col">Fecha Orden</th>
+										<th scope="col">Fecha Pago</th>
+										<th scope="col">Monto</th>
+										<th scope="col">Estado</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row">1</th>
+										<td>Pago de la Matrícula de Gestión ambiental v6</td>
+										<td>2023-12-20</td>
+										<td>2024-01-17</td>
+										<td>bs. 1500.00</td>
+										<td><span class="badge bg-success-subtle text-success">Pagado</span>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">1</th>
+										<td>Primera Cuota de Gestión ambiental v6</td>
+										<td>2023-12-20</td>
+										<td>2024-02-01</td>
+										<td>bs. 500.00</td>
+										<td><span class="badge bg-success-subtle text-success">Pagado</span>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">1</th>
+										<td>Segunda cuota de Gestión ambiental v6</td>
+										<td>2023-12-20</td>
+										<td></td>
+										<td>bs. 500.00</td>
+										<td><span class="badge bg-success-subtle text-danger">Atrasado</span>
+										</td>
+									</tr>
+									<tr>
+										<th scope="row">1</th>
+										<td>Tercera cuota de Gestión ambiental v6</td>
+										<td>2023-12-20</td>
+										<td></td>
+										<td>bs. 500.00</td>
+										<td><span class="badge bg-success-subtle text-warning">Pendiente</span>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						<div class="modal fade zoomIn" id="showModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+			aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered modal-lg">
+				<div class="modal-content border-0">
+					<div class="modal-header p-3 bg-soft-info">
+						<h5 class="modal-title" id="exampleModalLabel">Orden de Pago</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+							id="close-modal"></button>
+					</div>
+						<div class="modal-body">
+							<label for="choices-status-input" class="form-label">Programa de la Orden</label>
+								<select class="form-select" data-choices data-choices-search-false
+									id="choices-status-input">
+									<option value="Inprogress" selected>Programa Diplomado en Gestion Ambiental 6ta version</option>
+									<option value="Completed">Programa Diplomado en Educacion Superior 17ma version</option>
+									<option value="Inprogress">Programa Diplomado en Gestion Ambiental 7ma version</option>
+								</select>
+							<input type="hidden" id="tasksId" />
+							<div class="mb-3">
+								<label class="form-label mb-0">Descripción</label>
+								<input type="text" class="form-control" data-provider="flatpickr"
+									data-date-format="Y-m-d">
+							</div>
+							<div class="mb-3">
+								<label class="form-label mb-0">Monto</label>
+								<input type="text" class="form-control" data-provider="flatpickr"
+									data-date-format="Y-m-d">
+							</div>
+							<div class="mb-3">
+								<label class="form-label mb-0">Fecha limite</label>
+								<input type="text" class="form-control" data-provider="flatpickr"
+									data-date-format="Y-m-d">
+							</div>
+						</div>
+						<div class="modal-footer">
+							<div class="hstack gap-2 justify-content-end">
+								<button type="button" class="btn btn-light" id="close-modal"
+									data-bs-dismiss="modal">Cerrar</button>
+								<button type="submit" class="btn btn-success" id="add-btn">Añadir Orden</button>
+								<!-- <button type="button" class="btn btn-success" id="edit-btn">Update Task</button> -->
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+		<!--end modal-->
+					</div>
+					<!--end tab-pane-->
 				</div>
 			</div>
 			<!-- end col -->
